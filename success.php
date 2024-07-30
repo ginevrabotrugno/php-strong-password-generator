@@ -1,3 +1,15 @@
+<?php 
+
+session_start();
+
+if (isset($_SESSION['password'])) {
+    $psw = $_SESSION['password'];
+} else {
+    header('Location: ./index.php');
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,9 +24,8 @@
         <p>La tua password sicura è:</p>
         <div class="password">
             <?php
-                // Qui puoi inserire il codice per generare la password
-                // Per ora, mostreremo una password di esempio
-                echo "EsempioPassword123!";
+                
+                echo htmlspecialchars($psw);
             ?>
         </div>
         <button onclick="window.location.href='index.php'">Genera Nuova Password</button>
