@@ -15,6 +15,16 @@ Buon lavoro!
 Ps: La grafica è libera, in ogni caso vi invio lo screenshot se avete bisogno di ispirazione ;-)
 PPSS: per i numeri e le lettere gestiteli voi, i caratteri speciali sono i seguenti: !?&%$<>^+-*/()[]{}@#_= -->
 
+<?php
+    $allChars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!?&%$<>^+-*/()[]{}@#_=';
+
+    $min = 8;
+    $max = 32;
+
+    $output = "Generare un password di lunghezza compresa fra $min e $max";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,12 +37,14 @@ PPSS: per i numeri e le lettere gestiteli voi, i caratteri speciali sono i segue
 <div class="container">
         <h1>Strong Password Generator</h1>
         <h2>Genera una password sicura</h2>
-        <p>Generare un password di lunghezza compresa fra 8 e 32</p>
+        <p>
+            <?php echo $output ?>
+        </p>
         <form>
             <label for="lunghezza">Lunghezza password:</label>
-            <input type="number" id="lunghezza" name="lunghezza" min="8" max="32">
+            <input type="number" id="lunghezza" name="lunghezza" min="<?php echo $min ?>" max="<?php echo $max ?>">
             
-            <p>Consenti ripetizioni di uno o più caratteri:</p>
+            <!-- <p>Consenti ripetizioni di uno o più caratteri:</p>
             <input type="radio" id="si" name="ripetizioni" value="si" checked>
             <label for="si">Sì</label>
             <input type="radio" id="no" name="ripetizioni" value="no">
@@ -45,7 +57,7 @@ PPSS: per i numeri e le lettere gestiteli voi, i caratteri speciali sono i segue
                 <label for="numeri">Numeri</label>
                 <input type="checkbox" id="simboli" name="simboli">
                 <label for="simboli">Simboli</label>
-            </div>
+            </div> -->
             
             <button type="submit">Invia</button>
             <button type="reset">Annulla</button>
