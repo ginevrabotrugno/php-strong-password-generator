@@ -25,8 +25,12 @@ PPSS: per i numeri e le lettere gestiteli voi, i caratteri speciali sono i segue
 
 
     if (isset($_GET['lunghezza']) && !empty($_GET['lunghezza'])) {
+        session_start();
+
         $psw = generatePassword($allChars, $_GET['lunghezza']);
-        $output = "la mia password è:" . htmlspecialchars($psw);
+        $_SESSION['password'] = $psw;
+        // $output = "la mia password è:" . htmlspecialchars($psw);
+        header('Location: ./success.php');
     } else {
         $output = "Generare un password di lunghezza compresa fra $min e $max";
     }
