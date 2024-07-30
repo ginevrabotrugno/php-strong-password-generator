@@ -14,3 +14,42 @@ Dare all’utente anche la possibilità di permettere o meno la ripetizione di c
 Buon lavoro!
 Ps: La grafica è libera, in ogni caso vi invio lo screenshot se avete bisogno di ispirazione ;-)
 PPSS: per i numeri e le lettere gestiteli voi, i caratteri speciali sono i seguenti: !?&%$<>^+-*/()[]{}@#_= -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Strong Password Generator</title>
+</head>
+<body>
+<div class="container">
+        <h1>Strong Password Generator</h1>
+        <h2>Genera una password sicura</h2>
+        <p>Generare un password di lunghezza compresa fra 8 e 32</p>
+        <form>
+            <label for="lunghezza">Lunghezza password:</label>
+            <input type="number" id="lunghezza" name="lunghezza" min="8" max="32">
+            
+            <p>Consenti ripetizioni di uno o più caratteri:</p>
+            <input type="radio" id="si" name="ripetizioni" value="si" checked>
+            <label for="si">Sì</label>
+            <input type="radio" id="no" name="ripetizioni" value="no">
+            <label for="no">No</label>
+            
+            <div>
+                <input type="checkbox" id="lettere" name="lettere">
+                <label for="lettere">Lettere</label>
+                <input type="checkbox" id="numeri" name="numeri">
+                <label for="numeri">Numeri</label>
+                <input type="checkbox" id="simboli" name="simboli">
+                <label for="simboli">Simboli</label>
+            </div>
+            
+            <button type="submit">Invia</button>
+            <button type="reset">Annulla</button>
+        </form>
+    </div>
+</body>
+</html>
